@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+body{
+    background-image:  url(../img/back.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100% 100%;
+    
+}
+
+/*/*
+NAVEGAÇÃO
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height: 60px;
+    bord
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-family:"oswald";
+    font-size: 20px;
+    margin-left: 150px;
+    padding: 20px 20px;
+    text-decoration: none;
+    width: 60px;
+    text-align: center;
+    
+    
+}
+#est {
+    display: block;
+    color: #FDFDFD;
+    margin-left: 130px;
+    width: 6em
+    
+}
+
+li a:hover:not(.active)  {
+    background-color: #111;
+}
+.active {
+    background-color:#F38A01 ;
+    margin-left: 1px;
+    width: 100px;
+    text-align: center;
+   
+}
+
+/*
+SOBRE
+*/
+
+.sobre h1, h3{
+    color:#F38A01;
+    font-family: Russo one;
+}
+.sobre h3{
+    color:#020202;
+    font-family: 'Kanit', sans-serif;
+}
+.sobre p1{
+    position: absolute;
+    width: 100%;
+    height: 405px;
+    
+    box-sizing: border-box;
+    background: rgba(7, 7, 7, 0.38);
+    color:white;
+    font-family: 'Kanit', sans-serif;
+}
+.sobre h4{
+    color: #F35F0A;
+    margin: 10px 0 5px 0;
+    text-align:center;
+    font-size: 20px;
+}

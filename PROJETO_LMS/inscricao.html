@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/inscricao.css">
+    <link type="text/css" rel="stylesheet" href="css/normalize.css">
+    <title>Estude Conosco</title>
+    <nav id="menu">
+        <ul type="disc">
+                <li><a  class="active" id="menu" href="index.html">Home</a></li>
+                <li><a id="menu" href="sobre.html">Sobre</a><li></li>
+                <li><a id="est" href="inscricao.html">Estude Conosco</a><li>
+                <li><a id="menu" href="professor.html">Professor</a><li>
+                <li><a id="menu" href="aluno.html">Aluno</a><li>
+            
+        </ul>
+    </nav>       
+</head>
+<body>
+    <div class="cadastro">
+        <form>
+                <div id="marcacao">*</div><input type="text" name="n_completo" placeholder="Nome Completo" id="nomes" required><br/>
+                <div id="marcacao">*</div><input type="tel" name="cel" placeholder="Celular" id="celular" maxlength="10" required><br/>
+                <div id="marcacao">*</div><input type="email" name="e_mail" placeholder="E-mail" id="e-mail" required><br/>
+                <div id="marcacao">*</div><input type="tel" name="cpf" placeholder="CPF" id="cpf" maxlength="11" required><br/>
+                <div id="radios">
+                <select name="corsos" class="curso">
+                    <option value=""disabled selected>Selecione um Curso</option>
+                    <option value="1">Cyber-segurança</option>
+                    <option value="2">Análise Forense Computacional</option>
+                    <option value="3">Desenvolvimento Seguro</option>
+                    <option value="4">Teste de Invasão</option>
+                </select>
+                <br/>
+                
+                <strong>Portador de necessidades especiais?</strong><br/>
+                <input type="radio" name="gender" value="sim"> Sim <input type="radio" name="gender" value="não"required="true"> Não<br/>
+                <strong>Plano Estendido?</strong><br/>
+                <input type="radio" name="gender" value="sim"> Sim <input type="radio" name="gender" value="não"required="true"> Não<br/>
+                <strong>Convênio Empresarial?</strong><br/>
+                <input type="radio" name="gender" value="sim"> Sim<input type="radio" name="gender" value="não"required="true"> Não<br/>
+                <strong>Inscrição com ENEM?</strong><br/>
+                <input type="radio" name="gender" value="sim"> Sim <input type="radio" name="gender" value="não"required="true"> Não<br/>
+                </div>
+                <input type="submit" value="Enviar inscrição" id="botao">
+        </form>
+    </div>
+</body>
+</html>

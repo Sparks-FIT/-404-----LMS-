@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+body{
+    background-image:  url(../img/404__.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100% 100%;
+    
+}
+
+/*/*
+NAVEGAÇÃO
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height: 60px;
+    
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-family:"oswald";
+    font-size: 20px;
+    margin-left: 150px;
+    padding: 20px 20px;
+    text-decoration: none;
+    width: 60px;
+    text-align: center;
+    
+    
+}
+#est {
+    display: block;
+    color: #FDFDFD;
+    margin-left: 130px;
+   
+    width: 6em
+    
+}
+
+li a:hover:not(.active)  {
+    background-color: #111;
+}
+.active {
+    background-color: #F38A01;
+    margin-left: 1px;
+    width: 100px;
+    text-align: center;
+   
+}
+/*
+Login
+*/
+.LogIn{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 420px;
+    padding:80px 40px;    
+    box-sizing: border-box;
+    background: rgb(253, 121, 13);
+    
+}
+.user{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left:calc(50% - 50px)
+}
+h2{
+    margin: 0;
+    padding: 0 0 20px;
+    color: #FDFDFD;
+    font-family: Russo one;
+    text-align: center;
+}
+.LogIn p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #666666; 
+    font-family: Russo one;
+    font-size: 20px;
+}
+.LogIn input{
+    width: 100%;
+    margin-bottom: 20px; 
+}
+.LogIn input[type="text"],
+.LogIn input[type="password"]{
+    border: none;
+    border-bottom: 3px solid #000000 ;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    width: 90%;
+    font-family: oswald;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 20px;
+   
+}
+
+::placeholder{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+}
+.LogIn input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    font-weight: bold;
+    font-size:16px;
+    background:#000000;
+    color: rgba(243, 243, 243, 0.51);
+    margin-top:20px;
+
+}
+.LogIn input[type="submit"]:hover{
+    border: none;
+    outline: none;
+    height: 40px;
+    font-weight: bold;
+    font-size:16px;
+    background:rgba(241, 241, 241, 0.71);
+    color:#000000;
+    
+
+}
+
+.LogIn a{
+    color: #000000;
+    font-size: 18px;
+    font-family: Russo one;
+    margin-left: 40px;
+}
+.LogIn a:hover{
+    color: rgba(243, 243, 243, 0.51);
+    
+    
+}
