@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+body{
+    margin: 0;
+    padding: 0;
+
+    background-image:  url(../img/404__.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100% 100%;
+    
+}
+
+/*/*
+NAVEGAÇÃO
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height: 60px;
+    bord
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-family:"oswald";
+    font-size: 20px;
+    margin-left: 150px;
+    padding: 20px 20px;
+    text-decoration: none;
+    width: 60px;
+    text-align: center;
+    
+    
+}
+#est {
+    display: block;
+    color: #FDFDFD;
+    margin-left: 130px;
+   
+    width: 6em
+    
+}
+
+li a:hover:not(.active)  {
+    background-color: #111;
+}
+.active {
+    background-color: #F38A01;
+    margin-left: 1px;
+    width: 100px;
+    text-align: center;
+}
+/*
+Formulário
+*/
+form{
+    font-family: oswald;
+    font-size:15px;
+    color: #DB1F1F;
+}
+#marcacao{
+    font-size:20px;
+    
+
+}
+
+.cadastro{
+    
+    position: absolute;
+    width: 50%;
+    height: 450px;
+    box-sizing: border-box;
+    background: rgba(7, 7, 7, 0.6);
+    
+}
+.cadastro input[type="text"],
+.cadastro input[type="tel"],
+.cadastro input[type="email"]{
+    border: none;
+    border-bottom: 1px solid #5D5A5A ;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    width: 90%;
+    text-align: center;
+    font-family: oswald;
+    font-size:19px; 
+    color: #FDFDFD
+
+    
+}
+::placeholder{
+    color:#F8ECEC; 
+}
+#radios{
+    color:#FFFFFF;
+    font-family: 'oswald', sans-serif;
+    font-size:17px; 
+    margin-left: 80px;
+    margin-top:10px;
+}
+
+select{
+    background: rgba(34, 29, 29, 0.66);
+    color: #F36F03;
+    font-family: Russo one;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.86) ;
+ 
+}
+select :hover{
+    
+    background-color: rgb(238, 153, 7);
+    color: #000000;
+    
+}
+.cadastro input[type="radio"]{
+    color: #F36F03;
+}
+#botao{
+    border: none;
+    margin-left: 100px;
+    margin-top: 10px;
+    background: #F36F03;
+    color:white;
+    width:200px;  
+   
+}
