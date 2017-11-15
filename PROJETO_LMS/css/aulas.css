@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+body{
+    background-color:#e5e5e5 ;    
+}
+.bloco_aluno{
+    margin-left: 100px;
+    margin-top: -100px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 210px;
+    padding:0PX;  
+    box-sizing: border-box;
+    background: #eee;
+    font-family:Russo one;
+    color:#EC720E;
+ 
+
+}
+.back-direito   {
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 200px;
+    width: 85.55%;
+    height: 575px;     
+    box-sizing: border-box;
+    background: rgb(22, 21, 19);
+
+}
+.user{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    margin-left: 45px;
+}
+/*
+NAVEGAÇÃO
+*/
+
+.menu{   
+    width: 200px; 
+    list-style: none;
+	padding:0px;
+	margin-top:200px;
+	font-family:Russo one;
+    
+     
+        
+} 
+.menu a {
+        background-color: #eee; 
+        color: #000000; 
+        display: block; 
+        padding: 12px; 
+        text-decoration: none; 
+        height: 100px;
+       
+    }
+.menu a:hover {
+        background-color: #070606; 
+        color: #F57904;
+       
+ }
+    
+ .menu  li ul{
+    position:absolute; 
+    top:25px; 
+    left:0;
+    background-color:rgba(238, 238, 238, 0.33); 
+    display:none;
+    border: 5px solid #F57904;
+    
+    
+}
+.menu li:hover ul, .menu li.over ul{
+            display:block;
+            margin-left: 208px;
+            margin-top:423px;
+            width: 10px;
+            padding:0px;
+            
+ }
+.menu li ul li{
+            display:block; 
+            width:200px;
+            margin-left: 0px;
+}
+/*
+    ATIVIDADES
+*/
+select{
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    width:500px;
+    margin-bottom:50px;
+    margin-left:0x;
+    font-size:15px;
+    font-family: Russo one;
+
+}
+.td{
+    position: absolute;
+    margin-top: -500px;
+    margin-left: 500px;
+    color:#F78400;
+    text-align: center;
+}
+.area_de_arquivos{
+    color:#F57904;
+    border: solid #e5e5e5;
+    width: 250px;
+    height: 400px;
+    position: absolute;  
+    margin-left: -90px;
+    color:#d1d1d1;
+    text-align: center;
+    font-family: Russo one;
+}
+.area_de_arquivos2{
+    color:#F57904;
+    border: solid #e5e5e5;
+    width: 250px;
+    height: 400px;
+    position: absolute;  
+    margin-left: 168px;
+    color:#d1d1d1;
+    text-align: center;
+    font-family: Russo one;
+}
+.area_de_arquivos h6, h4{
+    margin-top:-20px;
+    color:#F57904;
+    font-family: 'Orbitron'
+}
+.area_de_arquivos2 h6, h4{
+    margin-top:-20px;
+    color:#F57904;
+    font-family: 'Orbitron'
+}

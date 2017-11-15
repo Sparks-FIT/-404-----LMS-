@@ -3,7 +3,7 @@ body{
     background-color:#e5e5e5 ;    
 }
 /*
-PERFIL
+PARTE SUPERIOR DO MENU
 */
 .bloco_aluno{
     margin-left: 100px;
@@ -17,7 +17,17 @@ PERFIL
     background: #eee;
     font-family:Russo one;
     color:#EC720E;
-    
+ 
+
+}
+.back-direito   {
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 200px;
+    width: 85.55%;
+    height: 575px;     
+    box-sizing: border-box;
+    background: rgb(22, 21, 19);
 
 }
 .user{
@@ -28,61 +38,12 @@ PERFIL
     position: absolute;
     margin-left: 45px;
 }
-.blocoaluno__{
-    position: absolute;
-    margin-top: -200px;
-    margin-left: 200px;
-    width: 85.55%;
-    height: 575px;     
-    box-sizing: border-box;
-    background: rgb(22, 21, 19);
-    color:red;
-}
-.blocoaluno__ input[type="text"]
-{
-    border: none;
-    border-bottom: 1px solid #5D5A5A ;
-    background: transparent;
-    color:#d1d1d1 ;
-    width: 32%;
-    outline: none;
-}
-#numero{
-    width: 10%;
-    outline: none;
-}
-.blocoaluno__ input[type="email"],
-input[type="tel"]{
-    border: none;
-    border-bottom: 1px solid #5D5A5A ;
-    background: transparent;
-    color:#d1d1d1 ;
-    width: 21%;
-    outline: none;
-}
-
-#enviar_foto{
-    margin-left: 40%;
-    width: 100px;
-    height: 100px;
-    border-radius: 60%;
-    
-}
-#imagem__Aluno{
-    margin-left: 35%;
-    width: 150px;
-    height: 150px;
-    border-radius: 60%;
-    
-    
-}
-
 /*
 NAVEGAÇÃO
 */
 
 .menu{   
-    width: 200px; /* Set a width if you like */
+    width: 200px; 
     list-style: none;
 	padding:0px;
 	margin-top:200px;
@@ -92,16 +53,16 @@ NAVEGAÇÃO
         
 } 
 .menu a {
-        background-color: #eee; /* Grey background color */
-        color: #000000; /* Black text color */
-        display: block; /* Make the links appear below each other */
-        padding: 12px; /* Add some padding */
-        text-decoration: none; /* Remove underline from links */
+        background-color: #eee; 
+        color: #000000; 
+        display: block; 
+        padding: 12px; 
+        text-decoration: none; 
         height: 100px;
        
     }
 .menu a:hover {
-        background-color: #070606; /* Dark grey background on mouse-over */
+        background-color: #070606; 
         color: #F57904;
        
  }
@@ -129,6 +90,50 @@ NAVEGAÇÃO
             width:200px;
             margin-left: 0px;
 }
+
 /*
 CONSULTAS
 */
+
+.boletim{
+    position: absolute;
+    margin-top: -590px;
+    margin-left: 200px;
+    color: #F57904;
+    font-family: Russo one;
+    font-size: 20px;
+    
+}
+table {
+    display: table;
+    border-spacing: 0px;
+    border-color: rgb(245, 242, 242);
+    border-width: 3px;
+    margin-left: 165px;
+    
+}
+table th {
+    border-color: rgb(245, 242, 242);
+    border-width: 3px;
+}
+.legenda{
+    position: absolute;
+    width: 350px;
+    margin-top: 40px;
+    margin-left: 400px;
+    text-align: center;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    border-spacing: 0px;
+    border-color: #FDFDFD;
+}
+input{
+    background-color: rgb(22, 21, 19);
+    border-width: 3px;
+    color:#FDFDFD;
+    font-family: arial;
+}
+.select{
+    border:none;
+}
