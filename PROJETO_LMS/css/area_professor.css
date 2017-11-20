@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+body{
+    background-color:#e5e5e5 ;    
+}
+/*
+PERFIL
+*/
+.bloco_professor{
+    margin-left: 100px;
+    margin-top: -100px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 210px;
+    padding:0PX;  
+    box-sizing: border-box;
+    background: #eee;
+    font-family:Russo one;
+    color:#EC720E;
+    
+
+}
+.user{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    margin-left: 45px;
+}
+.blocoprof__{
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 200px;
+    width: 85.55%;
+    height: 697px;         
+    box-sizing: border-box;
+    background: rgb(22, 21, 19);
+    color:red;
+}
+.blocoprof__ input[type="text"]
+{
+    border: none;
+    border-bottom: 1px solid #5D5A5A ;
+    background: transparent;
+    color:#d1d1d1 ;
+    width: 32%;
+    outline: none;
+}
+#numero{
+    width: 10%;
+    outline: none;
+}
+.blocoprof__ input[type="email"],
+input[type="tel"]{
+    border: none;
+    border-bottom: 1px solid #5D5A5A ;
+    background: transparent;
+    color:#d1d1d1 ;
+    width: 21%;
+    outline: none;
+}
+
+#enviar_foto{
+    margin-left: 40%;
+    width: 100px;
+    height: 100px;
+    border-radius: 60%;
+    
+}
+#imagem__professor{
+    margin-left: 35%;
+    width: 150px;
+    height: 150px;
+    border-radius: 60%;
+    
+    
+}
+
+/*
+NAVEGAÇÃO
+*/
+
+.menu {   
+    width: 200px; /* Set a width if you like */
+    list-style: none;
+	padding:0px;
+	margin-top:200px;
+	font-family:Russo one;
+    
+     
+        
+} 
+.menu a {
+        background-color: #eee;  
+        color: #000000;  
+        display: block; 
+        padding: 12px; 
+        text-decoration: none; 
+        height: 100px;
+       
+    }
+.menu a:hover {
+        background-color: #070606;
+        color: #F57904;
+       
+ }
+    
+ .menu  li ul{
+    position:absolute; 
+    top:25px; 
+    left:0;
+    background-color:rgba(238, 238, 238, 0.33); 
+    display:none;
+    border: 5px solid #F57904;
+    
+    
+    
+}
+.menu li:hover ul, .menu li.over ul{
+            display:block ;
+            margin-left: 208px;
+            margin-top:423px;
+            width: 10px;
+            padding: 0px;
+           
+            
+ }
+.menu li ul li{
+            display:block; 
+            width:200px;
+            margin-left: 0px;
+}
+
+input[type="submit"]{
+    position: absolute;
+    margin-top: 250px;
+    margin-left: -350px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;
+}
+input[type="reset"]{
+    position: absolute;
+    margin-top: 250px;
+    margin-left: -220px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;
+}

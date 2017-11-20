@@ -23,9 +23,9 @@ body{
     margin-top: -200px;
     margin-left: 200px;
     width: 85.55%;
-    height: 575px;     
+    height: 697px;     
     box-sizing: border-box;
-    background: #e5e5e5;
+    background: rgb(22, 21, 19);
 
 }
 .user{
@@ -36,8 +36,6 @@ body{
     position: absolute;
     margin-left: 45px;
 }
-
-
 /*
 NAVEGAÇÃO
 */
@@ -90,50 +88,87 @@ NAVEGAÇÃO
             width:200px;
             margin-left: 0px;
 }
+
 /*
-SEMAFORO
+CANCELAMENTO
 */
+.info{
+    margin-left: 500px;
+    margin-top: -600px;
+    position: absolute;
+    color: #F57904;
+    font-family: Orbitron;
+    text-align: center;
+}
+textarea{
+    margin: 0px;
+    height: 151px;
+    width: 346px;
+    color: #d1d1d1;
+    font-family: Orbitron;
+    background-color: rgb(22, 21, 19);
+    border-width: 1px;
+}
+select{
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    position: absolute;
+    color:#F78400;
+    background-color: rgb(22, 21, 19);
+    text-align: center;
+    font-size:15px;
+    font-family: Russo one;
+}
 
+.disc{
+    margin-left:-300px; 
+}
 
-#verde{
-    position: absolute;
-    margin-top: -200px;
-    margin-left: 200px;
-    width: 27.51%;
-    height: 575px;     
-    box-sizing: border-box;
-    background: rgba(93, 248, 9, 0.4);
-    text-align: center;
+.info input[type="tel"]{
+    border: none;
+    border-bottom: 1px solid #5D5A5A ;
+    background: transparent;
+    color: #d1d1d1;
+    font-family: Orbitron;
     font-family: Orbitron;
     font-size: 20px;
-    font-weight: bold;
-    color:#000000;
+    width: 30%;
+    outline: none;
+    
 }
-#amarelo{
-    position: absolute;
-    margin-top: -200px;
-    margin-left: 596px;
-    width: 27.51%;
-    height: 575px;     
-    box-sizing: border-box;
-    background: rgba(220, 231, 20, 0.47);
-    text-align: center;
+.info input[type="text"]
+{
+    border: none;
+    border-bottom: 1px solid #5D5A5A ;
+    background: transparent;
+    color: #d1d1d1;
     font-family: Orbitron;
     font-size: 20px;
-    font-weight: bold;
-    color: #000000;
+    width: 300px;
+    outline: none;
 }
-#vermelho{
+h2, textarea{
+    margin-left: -100px;
+}
+input[type="submit"]{
     position: absolute;
-    margin-top: -200px;
-    margin-left: 992px;
-    width: 27.51%;
-    height: 575px;     
-    box-sizing: border-box;
-    background: rgba(231, 24, 20, 0.4);
-    text-align: center;
-    font-family: Orbitron;
-    font-size: 20px;
-    font-weight: bold;
-    color: #000000;
+    margin-top: 250px;
+    margin-left: -320px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;
 }
+input[type="reset"]{
+    position: absolute;
+    margin-top: 250px;
+    margin-left: -150px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;

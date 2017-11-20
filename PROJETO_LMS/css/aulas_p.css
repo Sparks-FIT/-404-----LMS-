@@ -23,9 +23,9 @@ body{
     margin-top: -200px;
     margin-left: 200px;
     width: 85.55%;
-    height: 575px;     
+    height: 100%;     
     box-sizing: border-box;
-    background: #e5e5e5;
+    background: rgb(22, 21, 19);
 
 }
 .user{
@@ -36,8 +36,6 @@ body{
     position: absolute;
     margin-left: 45px;
 }
-
-
 /*
 NAVEGAÇÃO
 */
@@ -91,49 +89,93 @@ NAVEGAÇÃO
             margin-left: 0px;
 }
 /*
-SEMAFORO
+    ATIVIDADES
 */
+select{
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    position: absolute;
+    margin-top: -650px;
+    margin-left: 500px;
+    color:#F78400;
+    background-color: #000000;
+    text-align: center;
+    font-size:15px;
+    font-family: Russo one;
 
+}
+.td{
 
-#verde{
     position: absolute;
-    margin-top: -200px;
-    margin-left: 200px;
-    width: 27.51%;
-    height: 575px;     
-    box-sizing: border-box;
-    background: rgba(93, 248, 9, 0.4);
+    margin-top: -390px;
+    margin-left: 500px;
+    color:#F78400;
     text-align: center;
-    font-family: Orbitron;
-    font-size: 20px;
-    font-weight: bold;
-    color:#000000;
 }
-#amarelo{
-    position: absolute;
-    margin-top: -200px;
-    margin-left: 596px;
-    width: 27.51%;
-    height: 575px;     
-    box-sizing: border-box;
-    background: rgba(220, 231, 20, 0.47);
+.area_de_arquivos{
+    color:#F57904;
+    border: solid #e5e5e5;
+    width: 250px;
+    height: 400px;
+    position: absolute;  
+    margin-left: -90px;
+    color:#d1d1d1;
     text-align: center;
-    font-family: Orbitron;
-    font-size: 20px;
-    font-weight: bold;
-    color: #000000;
+    font-family: Russo one;
 }
-#vermelho{
-    position: absolute;
-    margin-top: -200px;
-    margin-left: 992px;
-    width: 27.51%;
-    height: 575px;     
-    box-sizing: border-box;
-    background: rgba(231, 24, 20, 0.4);
+.area_de_arquivos2{
+    color:#F57904;
+    border: solid #e5e5e5;
+    width: 250px;
+    height: 400px;
+    position: absolute;  
+    margin-left: 168px;
+    color:#d1d1d1;
     text-align: center;
-    font-family: Orbitron;
-    font-size: 20px;
-    font-weight: bold;
-    color: #000000;
+    font-family: Russo one;
+}
+.area_de_arquivos h6, h4{
+    margin-top:-30px;
+    color:#F57904;
+    font-family: 'Orbitron'
+}
+.area_de_arquivos2 h6, h4{
+    margin-top:20px;
+    color:#F57904;
+    font-family: 'Orbitron'
+}
+
+.arquivos{
+    position: absolute;
+    margin-top: -600px;
+    margin-left: 500px;
+    color: #d1d1d1
+
+}
+#txt{
+    position: absolute;
+    margin-top: -550px;
+    margin-left: 500px; 
+    border:none;
+    outline: none;
+    font-family: 'Orbitron'
+}
+h2{
+    position: absolute;
+    margin-top: -580px;
+    margin-left: 500px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+}
+input[type="submit"]{
+    position: absolute;
+    margin-top: -450px;
+    margin-left: 800px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;
 }
