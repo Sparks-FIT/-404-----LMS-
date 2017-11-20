@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultas</title>
+    <link rel="stylesheet" href="css/consultas_p.css">
+</head>
+<body>
+        <div class="back-direito">
+            </div>
+        <div class="bloco_aluno">
+                <img src="img/avatar.jpg" class="user">
+               <br/><br/><br/><br/><br/><br/>
+                Nome do Professor<br/>
+               
+        </div>
+        <nav >
+            <ul class="menu">
+                <li><a href="area_professor.html">Perfil</a></li>
+                <li><a href="consultas_p.html">Consultas</a></li>
+                <li><a href="#">SmartClass</a>
+                    <ul>
+                        <li><a href="aulas_p.html">Aulas</a></li>
+                        <li><a href="atividades_p.html">Atividades</a></li>               
+                      
+                    </ul>
+                    <li><a href="cancel.html">Cancelar Matrícula</a>
+                </li> 
+            </ul>
+        </nav>
+    >
+<!-----------------------------------------///////////-------------------------->
+
+ <div class="boletim">
+    <H4><table border='2'>  
+        <tr>
+                
+            <th>Disciplina</th>
+            <th>MB1</th>
+            <th>SUB1</th>
+            <th>MB2</th>
+            <th>SUB2</th>
+            <th>MF</th>
+            <th>FT</th>
+            <th>Situação</th>
+
+           
+        </tr> 
+                         
+        <tr>
+                <th><select>Disciplina
+                        <option value=""disabled selected>Selecione uma Disciplina</option>
+                        <option value="1">Cyber-segurança</option>
+                        <option value="2">Análise Forense Computacional</option>
+                        <option value="3">Desenvolvimento Seguro</option>
+                        <option value="4">Teste de Invasão</option>
+                     </select></th>
+           <!-- <th>Cyber-segurança</th>-->
+           
+            <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
+            <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
+            <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
+            <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
+            <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
+            <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
+            <th>
+                <select >
+                    <option value="turma"disabled selected>Situação</option>
+                    <option value="Aprovado">Aprovado</option>
+                    <option value="Reprovado">Exame</option>
+                    <option value="Reprovado">Reprovado</option>
+                </select>
+            </th>
+        </tr> 
+
+                            
+         
+</table></h4>
+<br/>
+<table id="tabler" border='1'>
+    <tr>
+        <th>Insira o R.A do Aluno</th>
+        <th><input type="tel" name="registro_nota" placeholder="R.A DO ALUNO" id="r.a" maxlength="7" required></th>
+    </tr>
+    
+</table>
+<br/>
+<th><input type="submit"></th>
+
+<div class="legenda">
+    <p><h3>Legenda:</h3    >
+    <h4>
+        MB1 - Média do 1º Bimestre<br>
+        SUB1 - Prova Substitutiva 1<br>
+        MB2 - Média do 2º Bimestre<br>
+        SUB2 - Prova Substitutiva 2<br>
+        MF - Média Final<br>
+        FT - Faltas
+    </h4>
+
+</div>
+</div>
+
+          
+</body>
+</html>
