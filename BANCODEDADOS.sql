@@ -131,7 +131,7 @@ CREATE TABLE LMS.Turma
 (
 	ID INT,
 	ID_DisciplinaOfertada INT NOT NULL,
-	Identificacao_Turma CHAR(1) NOT NULL, -- Alterado ID (Char(1)) para Identificação_Turma
+	Identificacao_Turma CHAR(1) NOT NULL, -- Alterado ID (Char(1)) para IdentificaÃ§Ã£o_Turma
 	Turno VARCHAR(15) NOT NULL,
 	ID_Professor INT NOT NULL, --(fk professor)
 	CONSTRAINT PK_Turma PRIMARY KEY (ID),
@@ -236,7 +236,7 @@ ALTER TABLE LMS.ArquivosQuestao
 ADD CONSTRAINT FK_ArquivosQuestao_Questao FOREIGN KEY (ID_Questao) REFERENCES LMS.Questao(ID)
 
 
-insert into LMS.Curso values (1, 'SI','Sistemas de Informação')
+insert into LMS.Curso values (1, 'SI','Sistemas de InformaÃ§Ã£o')
 insert into LMS.Curso values (2, 'BD','Banco de Dados')
 insert into LMS.Curso values (3, 'RC','Redes de Computadores')
 insert into LMS.Curso values (4, 'ADS','Analise e Desenvolvimento de Sistemas')
