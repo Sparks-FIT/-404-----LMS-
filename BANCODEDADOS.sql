@@ -6,8 +6,9 @@ CREATE TABLE Curso
 	CONSTRAINT PK_Curso PRIMARY KEY(ID),
 	CONSTRAINT UQ_Curso_Sigla UNIQUE(Sigla),
 	CONSTRAINT UQ_Curso_Nome UNIQUE(Nome)
-)	
-GO	
+);
+	
+
 CREATE TABLE GradeCurricular	
 (	
 	ID INT,
@@ -16,8 +17,9 @@ CREATE TABLE GradeCurricular
 	Semestre CHAR(1) NOT NULL,
 	CONSTRAINT PK_GradeCurricular PRIMARY KEY (ID),
 	CONSTRAINT UQ_GradeCurricular UNIQUE(ID_Curso, Ano, Semestre)
-)	
-GO	
+);
+	
+
 CREATE TABLE Periodo	
 (	
 	ID INT,
@@ -25,8 +27,9 @@ CREATE TABLE Periodo
 	Numero TINYINT NOT NULL,
 	CONSTRAINT PK_Periodo PRIMARY KEY (ID),
 	CONSTRAINT UQ_Perido UNIQUE(ID_GradeCurricular, Numero)
-)	
-GO	
+);	
+
+
 CREATE TABLE PeriodoDisciplina	
 (	
 	ID INT,
@@ -34,8 +37,9 @@ CREATE TABLE PeriodoDisciplina
 	ID_Disciplina INT NOT NULL,
 	CONSTRAINT PK_PeriodoDisciplina PRIMARY KEY (ID),
 	CONSTRAINT UQ_PeridoDisciplina UNIQUE(ID_Periodo, ID_Disciplina)
-)	
-GO	
+);	
+
+
 CREATE TABLE Aluno	
 (	
 	ID INT,
@@ -47,8 +51,9 @@ CREATE TABLE Aluno
 	Sigla_Curso CHAR(2) NOT NULL,
 	CONSTRAINT PK_Aluno PRIMARY KEY (ID),
 	CONSTRAINT UQ_Aluno_RA UNIQUE(RA)
-)	
-GO	
+);	
+
+
 CREATE TABLE CursoTurma	
 (	
 	ID INT,
@@ -56,8 +61,9 @@ CREATE TABLE CursoTurma
 	ID_Turma INT NOT NULL,
 	CONSTRAINT PK_CursoTurma PRIMARY KEY (ID),
 	CONSTRAINT UQ_CursoTurma UNIQUE(ID_Curso, ID_Turma)
-)	
-GO	
+);
+
+
 CREATE TABLE Disciplina	
 (	
 	ID INT,
@@ -73,8 +79,9 @@ CREATE TABLE Disciplina
 	Biliografia_Complementar TEXT NOT NULL,
 	CONSTRAINT PK_Disciplina PRIMARY KEY (ID),
 	CONSTRAINT UQ_Disciplina_Nome UNIQUE(Nome)
-)	
-GO	
+);	
+
+
 CREATE TABLE DisciplinaOfertada	
 (	
 	ID INT,
@@ -83,8 +90,9 @@ CREATE TABLE DisciplinaOfertada
 	Semestre CHAR(1) NOT NULL,
 	CONSTRAINT PK_DisciplinaOfertada PRIMARY KEY (ID),
 	CONSTRAINT UQ_DisciplinaOfertada UNIQUE(ID_Disciplina, Ano, Semestre)
-)	
-GO	
+);	
+
+
 CREATE TABLE Matricula	
 (	
 	ID INT,
@@ -92,8 +100,9 @@ CREATE TABLE Matricula
 	ID_Turma INT NOT NULL,
 	CONSTRAINT PK_Matricula PRIMARY KEY (ID),
 	CONSTRAINT UQ_Matricula UNIQUE(ID_Aluno, ID_Turma)
-)	
-GO	
+);
+
+
 CREATE TABLE Resposta	
 (	
 	ID INT,
@@ -106,19 +115,21 @@ CREATE TABLE Resposta
 	Data_de_Envio DATE NOT NULL,
 	CONSTRAINT PK_Resposta PRIMARY KEY (ID),
 	CONSTRAINT UQ_Resposta_QuestaoAluno UNIQUE(ID_Questao, ID_Aluno)
-)	
-GO	
+);
+
+
 CREATE TABLE Turma	
 (	
 	ID INT,
 	ID_DisciplinaOfertada INT NOT NULL,
 	Identificacao_Turma CHAR(1) NOT NULL, -- Alterado ID (Char(1)) para Identificação_Turma
 	Turno VARCHAR(15) NOT NULL,
-	ID_Professor INT NOT NULL, --(fk professor)
+	ID_Professor INT NOT NULL, 
 	CONSTRAINT PK_Turma PRIMARY KEY (ID),
 	CONSTRAINT UQ_Turma_DisciplinaofertadaProfessor UNIQUE(ID_DisciplinaOfertada, ID_Professor)
-)	
-GO	
+);
+
+
 CREATE TABLE Questao	
 (	
 	ID INT,
@@ -129,8 +140,9 @@ CREATE TABLE Questao
 	Data DATE NOT NULL, 
 	CONSTRAINT PK_Questao PRIMARY KEY (ID),
 	CONSTRAINT UQ_Questao UNIQUE(ID_Turma, Numero)
-)	
-GO	
+);
+
+
 CREATE TABLE ArquivosResposta	
 (	
 	ID INT,
@@ -138,8 +150,9 @@ CREATE TABLE ArquivosResposta
 	Arquivo VARCHAR(500) NOT NULL,
 	CONSTRAINT PK_ArquivosResposta PRIMARY KEY (ID),
 	CONSTRAINT UQ_ArquivosResposta UNIQUE(ID_Resposta, Arquivo)
-)	
-GO	
+);
+
+
 CREATE TABLE Professor	
 (	
 	ID INT,
@@ -151,8 +164,9 @@ CREATE TABLE Professor
 	CONSTRAINT PK_Professor PRIMARY KEY (ID),
 	CONSTRAINT UQ_Professor_RA UNIQUE(RA),
 	CONSTRAINT UQ_Professor_Apelido UNIQUE(Apelido)
-)	
-GO	
+);
+
+
 CREATE TABLE ArquivosQuestao	
 (	
 	ID INT,
@@ -160,14 +174,17 @@ CREATE TABLE ArquivosQuestao
 	Arquivo VARCHAR(500) NOT NULL,
 	CONSTRAINT PK_ArquivosQuestao PRIMARY KEY (ID),
 	CONSTRAINT UQ_ArquivosQUestao UNIQUE(ID_Questao, Arquivo)
-)	
-GO	
+);
+
+
 ALTER TABLE GradeCurricular	
 ADD CONSTRAINT FK_GradeCurricular_Curso FOREIGN KEY (ID_Curso) REFERENCES Curso(ID);	
 GO	
+
 ALTER TABLE Periodo	
 ADD CONSTRAINT FK_Periodo_GradeCurricular FOREIGN KEY (ID_GradeCurricular) REFERENCES GradeCurricular(ID);	
 GO	
+
 ALTER TABLE PeriodoDisciplina	
 ADD CONSTRAINT FK_PeriodoDisciplina_Periodo FOREIGN KEY (ID_Periodo) REFERENCES Periodo(ID)	
 GO	
