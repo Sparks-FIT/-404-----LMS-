@@ -1,185 +1,199 @@
-REATE TABLE Disciplina (
-    nome VARCHAR(150) NOT NULL,
-    carga_horaria TINYINT(4),
-    teoria DECIMAL(3 , 0 ),
-    pratica DECIMAL(3 , 0 ),
-    ementa TEXT,
-    competencias TEXT,
-    habilidades TEXT,
-    conteudo TEXT,
-    bibliografia_basica TEXT,
-    bibliografia_complementar TEXT,
-    PRIMARY KEY (nome)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+create table Disciplina (
+    id int IDENTITY(1,1) not null,
+    nome varchar(240) not null,
+    carga_horaria tinyint not null,
+    teoria decimal(3) not null,
+    pratica decimal (3) not null,
+    ementa text,
+    competencias text,
+    habilidades text,
+    conteudo text,
+    biografia_basica text,
+    biografia_complementar text,
+
+    constraint id_disciplina primary key (id),
+	 constraint uq_nome unique(nome)
+);
+go
+create table Curso (
+    id int IDENTITY(1,1) not null ,
+    sigla varchar (5),
+    nome varchar (50) not null ,
+
+    constraint pk_curso primary key (id),
+    constraint uq_curso unique (nome, sigla)
+);
+go
+
+create table Professor (
+   id int IDENTITY(1,1) not null,
+    ra int not null,
+    apelido varchar(30) not null,
+    nome varchar (120) not null ,
+    email varchar(80) not null,
+    celular varchar(11),
+
+    constraint pk_professor primary key (id),
+    constraint uq_professor unique (apelido,ra)
+);
+go
+
+create table Aluno (
+  	id int IDENTITY(1,1) not null,
+	 ra int not null,
+	 nome varchar (120) not null ,
+	 email varchar (80) not null,
+	 celular varchar(11),
+	 sigla_curso char(2),
+
+	constraint pk_aluno primary key (id),
+	constraint uq_aluno unique (ra),
+);
+go
+
+create table GradeCurricular (
+    id int IDENTITY(1,1) not null,
+    ano smallint,
+    semestre char(1) not null,
+    id_curso int not null,
+
+    constraint pk_gradecurricular primary key (id),
+    constraint fk_idCurso foreign key (id_curso) references Curso(id),
+    constraint uq_gradecurricular unique (ano, semestre),
+);
+go
+
+create table Periodo (
+	  id int IDENTITY(1,1) not null,
+    numero tinyint,
+	  id_gradecurricular int not null,
+
+    constraint pk_periodo primary key (id),
+    constraint uq_periodo unique(numero),
+    constraint fk_periodo foreign key (id_gradecurricular) references GradeCurricular(id),
+);
+go
+
+create table PeriodoDisciplina (
+	id int IDENTITY(1,1) not null,
+	id_periodo int not null,
+  id_disciplina int not null,
+
+	constraint pk_periododisciplina primary key (id),
+	constraint fk_periododisciplina foreign key (id_periodo) references Periodo(id),
+  constraint fk_id_disciplina foreign key (id_disciplina) references Disciplina(id),
+);
+go
+
+create table DisciplinaOfertada (
+	id  int IDENTITY(1,1) not null,
+	ano smallint,
+	semestre char(1),
+	id_disciplina int  not null,
 
 
-CREATE TABLE Professor (
-    ra INT(11) NOT NULL,
-    apelido VARCHAR(30),
-    nome VARCHAR(120),
-    celular VARCHAR(11),
-    email VARCHAR(80),
-    PRIMARY KEY (ra),
-    UNIQUE KEY UNIQUE_professor_apelido (apelido)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+	constraint pk_iddisciplinaofertada primary key(id),
+	constraint uq_iddisciplinaofertada unique (ano, semestre),
+	constraint fk_iddisciplinaofertada foreign key (id_disciplina) references Disciplina(id)
+);
+go
 
-CREATE TABLE DisciplinaOfertada (
-    nome_disciplina VARCHAR(240) NOT NULL,
-    ano SMALLINT NOT NULL,
-    semestre CHAR(1) NOT NULL,
-    PRIMARY KEY (nome_disciplina , ano, semestre),
-    CONSTRAINT fk_disciplina_ofertada_disciplina FOREIGN KEY (nome_disciplina)
-        REFERENCES Disciplina (nome)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+create table Turma (
+	id int IDENTITY(1,1) not null,
+	turno varchar(15) not null,
+	id_professor int not null,
+	id_disciplinaofertada int not null,
 
+	constraint pk_turma primary key(id),
+	constraint fk_id_professor foreign key (id_professor) references Professor(id),
+	constraint fk_id_disciplinaOfertada foreign key (id_disciplinaofertada) references DisciplinaOfertada(id),
+);
+go
 
-CREATE TABLE Curso (
-    sigla VARCHAR(5) NOT NULL,
-    nome VARCHAR(50),
-    PRIMARY KEY (sigla),
-    UNIQUE KEY UNIQUE_curso_nome (nome)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+create table CursoTurma (
+	id int IDENTITY(1,1) not null,
+	id_turma int not null,
+	id_curso int not null,
 
+	constraint pk_cursoturma primary key (id),
+	constraint fk_id_curso foreign key (id_curso) references Curso(id),
+	constraint fk_id_turma foreign key (id_turma) references Turma(id),
+);
+go
 
-CREATE TABLE GradeCurricular(
-    sigla_curso VARCHAR(5) NOT NULL,
-    ano SMALLINT NOT NULL,
-    semestre CHAR(1) NOT NULL,
-    PRIMARY KEY (sigla_curso, ano, semestre),
-    CONSTRAINT fk_GradeCurricular_curso FOREIGN KEY (sigla_curso)
-        REFERENCES Curso (sigla)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+create table Matricula( /* Pronto */
+	id int IDENTITY(1,1) not null,
+	id_turma int not null,
+	id_aluno  int not null,
 
-CREATE TABLE Periodo (
-    sigla_curso VARCHAR(5) NOT NULL,
-    ano_grade SMALLINT NOT NULL,
-    semestre_grade CHAR(1) NOT NULL,
-    numero TINYINT NOT NULL,
-    PRIMARY KEY (sigla_curso, ano_grade, semestre_grade, numero),
-    CONSTRAINT fk_periodo_gradecurricular
-    FOREIGN KEY (sigla_curso,ano_grade,semestre_grade)
-        REFERENCES GradeCurricular (sigla_curso,ano,semestre)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+	constraint Pk_Matricula primary key (id),
+	constraint Fk_matricula_id_turma foreign key (id_turma) references Turma(id),
+	constraint Fk_matricula_id_aluno foreign key (id_aluno) references Aluno(id),
+);
+go
 
+create table Questao (
+  id int IDENTITY(1,1) not null,
+	numero int not null,
+	data_limite_entrega date,
+	descricao text,
+	data date,
+  id_turma int not null,
 
-CREATE TABLE PeriodoDisciplina (
-    sigla_curso VARCHAR(5) NOT NULL,
-    ano_grade SMALLINT NOT NULL,
-    semestre_grade CHAR(1) NOT NULL,
-    numero_periodo TINYINT NOT NULL,
-    nome_disciplina VARCHAR(240) NOT NULL,
-    PRIMARY KEY (sigla_curso , ano_grade , semestre_grade , nome_disciplina , numero_periodo),
-    CONSTRAINT fk_periododisciplina_periodo 
-    FOREIGN KEY (sigla_curso , ano_grade , semestre_grade , numero_periodo)
-        REFERENCES Periodo (sigla_curso , ano_grade , semestre_grade , numero),
-    FOREIGN KEY (nome_disciplina)
-        REFERENCES Disciplina (nome)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  constraint pk_questao primary key (id),
+  constraint fk_questao_id_turma foreign key (id_turma) references Turma(id),
+	constraint uq_questao unique (numero)
+);
+go
 
+create table ArquivosQuestao (
+  id int IDENTITY(1,1) not null,
+	arquivo varchar(500) not null,
+  id_questao int not null,
 
+  constraint pk_arquivosquestao primary key (id),
+	constraint uq_arquivosquestao unique (arquivo),
+	constraint fk_arquivosquestao foreign key (id_questao) references Questao(id),
 
-CREATE TABLE Turma (
-    nome_disciplina VARCHAR(240) NOT NULL,
-    ano_ofertado SMALLINT NOT NULL,
-    semestre_ofertado CHAR(1) NOT NULL,
-    id CHAR(1) NOT NULL,
-    turno VARCHAR(15),
-    ra_professor int(11),
-    PRIMARY KEY (nome_disciplina,ano_ofertado,semestre_ofertado, id),
-    CONSTRAINT fk_turma_professor
-    FOREIGN KEY (ra_professor) 
-        REFERENCES Professor (ra),
-    CONSTRAINT fk_turma_disciplinaofertada 
-    FOREIGN KEY (nome_disciplina, ano_ofertado, semestre_ofertado)
-        REFERENCES DisciplinaOfertada (nome_disciplina,  ano, semestre)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
+go
 
+create table Resposta (
+  id int IDENTITY(1,1) not null,
+  ra_aluno int not null,
+	data_avaliacao date,
+	nota decimal(4,2),
+	avaliacao text,
+	descricao text,
+	data_de_envio date,
+	id_questao int not null,
 
-CREATE TABLE Questao (
-    nome_disciplina VARCHAR(240) NOT NULL,
-    ano_ofertado SMALLINT NOT NULL,
-    semestre_ofertado CHAR(1) NOT NULL,
-    id_turma CHAR(1) NOT NULL,
-    numero INT(11) NOT NULL,
-    data_limite_entrega DATE,
-    descricao TEXT,
-    data DATE,
-    PRIMARY KEY (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma,numero),  
-    CONSTRAINT fk_questao_turma  
-    FOREIGN KEY (nome_disciplina, ano_ofertado,semestre_ofertado,id_turma)  
-        REFERENCES Turma (nome_disciplina,ano_ofertado,semestre_ofertado,id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+	constraint uq_resposta unique (ra_aluno),
+	constraint pk_repsosta primary key (id),
+  constraint fk_resposta foreign key (id_questao) references Questao(id),
+);
+go
 
-CREATE TABLE ArquivoQuestao (
-    nome_disciplina VARCHAR(240) NOT NULL,
-    ano_ofertado SMALLINT NOT NULL,
-    semestre_ofertado CHAR(1) NOT NULL,
-    id_turma CHAR(1) NOT NULL,
-    arquivo VARCHAR(500) NOT NULL,
-    PRIMARY KEY (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma,arquivo),  
-    CONSTRAINT fk_arquivo_questao
-    FOREIGN KEY (nome_disciplina, ano_ofertado,semestre_ofertado,id_turma)  
-        REFERENCES Questao (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+create table arquivosresposta (
+    id int IDENTITY(1,1) not null,
+	arquivo varchar(500),
+    id_resposta int not null,
 
-CREATE TABLE Aluno (
-    ra INT(11) NOT NULL,
-    nome VARCHAR(120),
-    email VARCHAR(80),
-    celular CHAR(11),
-    sigla_curso CHAR(5) NOT NULL,
-    PRIMARY KEY (ra),
-    CONSTRAINT fk_aluno_curso FOREIGN KEY (sigla_curso)
-        REFERENCES Curso (sigla)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+	constraint uq_arquivosresposta unique (arquivo),
+	constraint fk_arquivosreposta foreign key (id_resposta) references Resposta(id),
+	constraint pk_arquivosresposta primary key (id)
+);
+go	
 
+create table usuario(
+	id int IDENTITY(1,1) not null,
+	ra int not null,
+	perfil char(1),
+	nome varchar(150) not null,
+	celular char(11),
+	ativo bit not null default 1,
 
-CREATE TABLE Matricula (
-    ra_aluno INT(11) NOT NULL,
-    nome_disciplina VARCHAR(240) NOT NULL,
-    ano_ofertado SMALLINT NOT NULL,
-    semestre_ofertado CHAR(1) NOT NULL,
-    id_turma CHAR(1) NOT NULL,
-    PRIMARY KEY (ra_aluno,nome_disciplina,ano_ofertado,semestre_ofertado,id_turma),  
-    CONSTRAINT fk_matricula_turma
-    FOREIGN KEY (nome_disciplina, ano_ofertado,semestre_ofertado,id_turma)  
-        REFERENCES Turma (nome_disciplina,ano_ofertado,semestre_ofertado,id),
-    CONSTRAINT fk_matricula_aluno
-    FOREIGN KEY (ra_aluno)  
-        REFERENCES Aluno (ra)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE Resposta (
-    nome_disciplina VARCHAR(240) NOT NULL,
-    ano_ofertado SMALLINT NOT NULL,
-    semestre_ofertado CHAR(1) NOT NULL,
-    id_turma CHAR(1) NOT NULL,
-    numero_questao INT(11) NOT NULL,
-    ra_aluno INT(11) NOT NULL,
-    descricao TEXT,
-    data_avaliacao DATE,
-    nota DECIMAL(4,2),
-    avaliacao TEXT,
-    data_de_envio DATE,
-    PRIMARY KEY (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma,numero_questao, ra_aluno),  
-    CONSTRAINT fk_resposta_aluno
-    FOREIGN KEY (ra_aluno)
-        REFERENCES Aluno(ra),
-    CONSTRAINT fk_resposta_questao
-    FOREIGN KEY (nome_disciplina, ano_ofertado, semestre_ofertado, id_turma,numero_questao)  
-        REFERENCES Questao (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma,numero)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE ArquivoResposta (
-    nome_disciplina VARCHAR(240) NOT NULL,
-    ano_ofertado SMALLINT NOT NULL,
-    semestre_ofertado CHAR(1) NOT NULL,
-    id_turma CHAR(1) NOT NULL,
-    arquivo VARCHAR(500) NOT NULL,
-    numero_questao INT(11) NOT NULL,
-    ra_aluno INT(11) NOT NULL,
-    PRIMARY KEY (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma,arquivo),  
-    CONSTRAINT fk_arquivo_reposta
-    FOREIGN KEY (nome_disciplina, ano_ofertado,semestre_ofertado,id_turma,numero_questao,ra_aluno)  
-        REFERENCES Resposta (nome_disciplina,ano_ofertado,semestre_ofertado,id_turma,numero_questao,ra_aluno)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+	constraint pk_usuario primary key (id),
+	constraint uq_usuario unique (ra)
+);
+go
