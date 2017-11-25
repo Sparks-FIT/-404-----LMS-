@@ -151,3 +151,13 @@ SEMAFORO
     font-weight: bold;
     color: #000000;
 }
+#arquivo{
+    position: absolute;
+    margin-top: 597px;
+    margin-left: 0px;
+    width: 170px;
+    border: none;
+    font-family: Russo one;
+    font-size:20px;
+}
+    
