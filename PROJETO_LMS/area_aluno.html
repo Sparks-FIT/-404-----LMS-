@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <title>Área do Aluno</title>
     <link href="css/area_aluno.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
     <div class="bloco_aluno">
-            <img src="img/avatar-aluno.jpg" class="user">
+            <img src="img/avatar-aluno.jpg" class="user" name"foto_do_aluno">
+            
            <br/><br/><br/><br/><br/><br/>
             Nome do Aluno<br/>
             R.A Aluno
     </div>
     <div class="blocoaluno__"  >
             
-            <a href="imagem__Aluno" ></a><input type="image"  src="img/avatar-aluno.jpg"id="imagem__Aluno"value="ENVIAR"><br/></a>
-            
+            <a href="imagem__Aluno" ></a><input type="image" name"foto_do_aluno" src="img/avatar-aluno.jpg"id="imagem__Aluno"value="ENVIAR"><br/></a>
+            <input type="file" id="foto_aluno">
         
-       <br/> *<input type="text" placeholder="Nome"  id="nome">
-             *<input type="text" placeholder="Sobrenome"  id="sobrenome"><br/><br/>
+       <br/> <br/> <br/> 
+        
+       
+        *<input type="text" placeholder="Nome"  id="nome">
+        *<input type="text" placeholder="Sobrenome"  id="sobrenome"><br/><br/>
         *<input type="email"placeholder="E-mail"     id="email">
         *<input type="tel" placeholder="Celular"     id="celular">
         *<input type="tel"placeholder="Telefone"     id="telefone"><br/><br/>
@@ -28,7 +33,8 @@
         *<input type="text" placeholder="Rua"        id="rua">
         *<input type="text" placeholder="CEP"        id="cep">
         
-
+        <input type="submit" value="Salvar">
+        <input type="reset" value="Cancelar">
 
     </div>
     
@@ -44,6 +50,7 @@
                       
                     </ul>
                 </li> 
+                <li><a href="cancela_aluno.html">Cancelamento</a></li>
             </ul>
         </nav>
         

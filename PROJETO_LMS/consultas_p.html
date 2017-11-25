@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Consultas</title>
     <link rel="stylesheet" href="css/consultas_p.css">
+    <link type="text/css" rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
+
         <div class="back-direito">
             </div>
         <div class="bloco_aluno">
@@ -13,11 +15,14 @@
                <br/><br/><br/><br/><br/><br/>
                 Nome do Professor<br/>
                
+               
         </div>
+        
+        
         <nav >
             <ul class="menu">
                 <li><a href="area_professor.html">Perfil</a></li>
-                <li><a href="consultas_p.html">Consultas</a></li>
+                <li><a href="consultas_p.html">Envios e Consultas</a></li>
                 <li><a href="#">SmartClass</a>
                     <ul>
                         <li><a href="aulas_p.html">Aulas</a></li>
@@ -28,7 +33,7 @@
                 </li> 
             </ul>
         </nav>
-    >
+    
 <!-----------------------------------------///////////-------------------------->
 
  <div class="boletim">
@@ -48,14 +53,14 @@
         </tr> 
                          
         <tr>
-                <th><select>Disciplina
+                <th><select id="sele">Disciplina
                         <option value=""disabled selected>Selecione uma Disciplina</option>
                         <option value="1">Cyber-segurança</option>
                         <option value="2">Análise Forense Computacional</option>
                         <option value="3">Desenvolvimento Seguro</option>
                         <option value="4">Teste de Invasão</option>
                      </select></th>
-           <!-- <th>Cyber-segurança</th>-->
+           
            
             <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
             <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
@@ -64,7 +69,7 @@
             <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
             <th><input type="text" name="Nota" size="3" maxlength ="2"></th>
             <th>
-                <select >
+                <select id="sele" >
                     <option value="turma"disabled selected>Situação</option>
                     <option value="Aprovado">Aprovado</option>
                     <option value="Reprovado">Exame</option>
@@ -97,10 +102,27 @@
         MF - Média Final<br>
         FT - Faltas
     </h4>
-
 </div>
+<div id="envio">
+    <h1>Envio de Atividades</h1>
+    
+    <br/>
+    Data de Envio:<input type="date" id"Data_envio">
+    <br/>
+    
+    Data de Entrega:<input type="date" id"Data_entrega" >
+    <br/>
+    
+    Hora de entrega:<input type="time" id"hora_entrega">
+    <br/>
+    <input type="file" id="arquivo">
+    <br/>
+    <input type="submit" id="bt_2">
+    <br/>
+    <input type="submit" id="atv_2"value="Atividades já cadastradas" onclick= location.href="atv_cadastrada.html">
+    
 </div>
-
-          
+    
+</div>        
 </body>
 </html>
