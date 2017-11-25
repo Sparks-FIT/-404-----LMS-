@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+body{
+    background-color:#e5e5e5 ;    
+}
+/*
+PERFIL
+*/
+.bloco_aluno{
+    margin-left: 100px;
+    margin-top: -100px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 210px;
+    padding:0PX;  
+    box-sizing: border-box;
+    background: #eee;
+    font-family:Russo one;
+    color:#EC720E;
+}
+.user{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    margin-left: 45px;
+}
+.back-direito{
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 200px;
+    width: 85.55%;
+    height: 690px;     
+    box-sizing: border-box;
+    background: #161513;
+    color:red;
+}
+#imagem__Aluno{
+    margin-left: 35%;
+    width: 150px;
+    height: 150px;
+    border-radius: 60%;
+}
+
+/*
+NAVEGAÇÃO
+*/
+
+.menu{   
+    width: 200px; /* Set a width if you like */
+    list-style: none;
+	padding:0px;
+	margin-top:200px;
+	font-family:Russo one;
+    
+     
+        
+} 
+.menu a {
+        background-color: #eee; /* Grey background color */
+        color: #000000; /* Black text color */
+        display: block; /* Make the links appear below each other */
+        padding: 12px; /* Add some padding */
+        text-decoration: none; /* Remove underline from links */
+        height: 100px;
+       
+    }
+.menu a:hover {
+        background-color: #070606; /* Dark grey background on mouse-over */
+        color: #F57904;
+       
+ }
+    
+ .menu  li ul{
+    position:absolute; 
+    top:25px; 
+    left:0;
+    background-color:rgba(238, 238, 238, 0.33); 
+    display:none;
+    border: 5px solid #F57904;
+    
+    
+}
+.menu li:hover ul, .menu li.over ul{
+            display:block;
+            margin-left: 200px;
+            margin-top:423px;
+            width: 10px;
+            padding:0px;
+            
+ }
+.menu li ul li{
+            display:block; 
+            width:200px;
+            margin-left: 0px;
+}
+
+
+form{
+    position: absolute;
+    margin-top: -690px;
+    margin-left: 600px;
+    color: #F57904;
+    font-family: Russo one;
+    font-size: 20px;
+}
+input[type="text"],
+input[type="number"],
+input[type="email"]{
+    border: none;
+    border-bottom: 1px solid #5D5A5A ;
+    background: transparent;
+    color: #d1d1d1;
+    font-family: Orbitron;
+    font-size: 20px;
+    width: 300px;
+    outline: none;
+}
+
+input[type="submit"]{
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 20px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;
+}
+input[type="reset"]{
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 130px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;
+}
+
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+select{
+    background: transparent ;
+    background-color: #161513 ;
+    color: #F36F03;
+    font-family: Orbitron;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid #5D5A5A ;
+    Margin-top: 30px;
+    outline-color: #F36F03;
+}

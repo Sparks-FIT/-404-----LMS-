@@ -127,10 +127,24 @@ SEMAFORO
     position: absolute;
     margin-top: -200px;
     margin-left: 992px;
-    width: 27.51%;
+    width: 27.65%;
     height: 575px;     
     box-sizing: border-box;
     background: rgba(231, 24, 20, 0.4);
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+#azul{
+    position: absolute;
+    margin-top: 373px;
+    margin-left: 200px;
+    width: 90%;
+    height: 365px;     
+    box-sizing: border-box;
+    background: rgba(11, 89, 235, 0.51);
     text-align: center;
     font-family: Orbitron;
     font-size: 20px;
