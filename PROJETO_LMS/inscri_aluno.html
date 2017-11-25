@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultas</title>
+    <link rel="stylesheet" href="css/inscri_aluno.css">
+</head>
+<body>
+        <div class="back-direito">
+            </div>
+        <div class="bloco_aluno">
+                <img src="img/avatar-aluno.jpg" class="user">
+               <br/><br/><br/><br/><br/><br/>
+                Nome do Aluno<br/>
+                R.A Aluno
+        </div>
+        <nav>
+                <ul class="menu">
+                    <li><a href="area_aluno.html">Perfil</a></li>
+                    <li><a href="consultas.html">Consultas</a></li>
+                    <li><a href="#">SmartClass</a>
+                        <ul>
+                            <li><a href="aulas.html">Aulas</a></li>
+                            <li><a href="atividades.html">Atividades</a></li>               
+                          
+                        </ul>
+                    </li> 
+                    <li><a href="inscri_aluno.html">Inscrição de Disciplinas</a></li>
+                </ul>
+            </nav>
+
+
+
+            <form>
+                    <div id="marcacao">*</div><input type="text" name="n_completo" placeholder="Nome Completo" id="nomes" required><br/>
+                    <div id="marcacao">*</div><input type="number" name="cel" placeholder="Celular" id="celular" maxlength="10" required><br/>
+                    <div id="marcacao">*</div><input type="email" name="e_mail" placeholder="E-mail" id="e-mail" required><br/>
+                    <div id="marcacao">*</div><input type="number" name="cpf" placeholder="CPF" id="cpf" maxlength="11" required><br/>
+                    <div id="radios">
+                    <select name="corsos" class="curso">
+                        <option value=""disabled selected>Selecione uma Disciplina</option>
+                        <option value="1">Cyber-segurança</option>
+                        <option value="2">Análise Forense Computacional</option>
+                        <option value="3">Desenvolvimento Seguro</option>
+                        <option value="4">Teste de Invasão</option>
+                    </select>
+                    <br/>
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Cancelar">
+            </form>
+</body>
+</html>
