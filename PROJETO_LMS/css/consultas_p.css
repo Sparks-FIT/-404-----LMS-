@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
+﻿@import url('https://fonts.googleapis.com/css?family=Russo+One');
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 body{
     background-color:#e5e5e5 ;    
@@ -27,7 +27,7 @@ PARTE SUPERIOR DO MENU
     margin-top: -200px;
     margin-left: 200px;
     width: 85.55%;
-    height: 697px;         
+    height: 940px;         
     box-sizing: border-box;
     background: rgb(22, 21, 19);
 
@@ -81,7 +81,7 @@ NAVEGAÇÃO
 }
 .menu li:hover ul, .menu li.over ul{
             display:block;
-            margin-left: 208px;
+            margin-left: 200px;
             margin-top:423px;
             width: 10px;
             padding:0px;
@@ -94,7 +94,7 @@ NAVEGAÇÃO
 }
 
 /*
-CONSULTAS
+ENVIOS E CONSULTAS
 */
 
 .boletim{
@@ -111,7 +111,7 @@ table {
     border-spacing: 0px;
     border-color: rgb(245, 242, 242);
     border-width: 3px;
-    margin-left: 165px;
+    margin-left: 104px;
     
 }
 table th {
@@ -137,15 +137,15 @@ input{
     font-size: 20px;
     font-family: Russo one;
     text-align: center;
-}
-select{
+} 
+select#sele{
     border:none;
     color: #F36F03;
-    font-family: Russo one;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.86) ;
     background-color: #000000;
-    font-size: 16px;
+    font-family: Russo one;
+    
  
 }
 #tabler{
@@ -153,11 +153,57 @@ select{
 }
 input[type="submit"]{
     margin-left: 500px;
-     color:#F57904;
+    color:#F57904;
     font-family: Russo one;
     font-size:20px;
     outline: none;
     border-width: 1px;
     background-color: #000000;
     
+}
+input[type="tel"], [type="text"]{
+    font-family: Russo one;
+}
+
+#envio{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 400px;
+}
+
+#arquivo{
+    width: 185px;
+    border: none;
+    font-family: Russo one;
+}
+input[type="date"],
+[type="time"]{
+    border: none;
+    color:#FDFDFD;
+    font-family: Russo one;
+    border-bottom: 1px solid #5D5A5A ;
+    margin-left:50px;
+    -webkit-appearance: none;
+    
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#bt_2{
+    margin:0px;
+    margin-top:20px;
+    margin-left: 10pc;
+}
+#atv_2{
+    margin-top:20px;
+    color:#F57904;
+    font-family: Russo one;
+    font-size:20px;
+    border-width: 1px;
+    background-color: #161513;
+    margin-left:0px;
+    border:none;
+    border-bottom: 1px solid #5D5A5A ;
 }

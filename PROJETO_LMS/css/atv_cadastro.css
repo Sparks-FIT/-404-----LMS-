@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
 body{
     background-color:#e5e5e5 ;    
 }
+
 /*
 PARTE SUPERIOR DO MENU
 */
@@ -25,7 +27,7 @@ PARTE SUPERIOR DO MENU
     margin-top: -200px;
     margin-left: 200px;
     width: 85.55%;
-    height: 575px;     
+    height: 700px;         
     box-sizing: border-box;
     background: rgb(22, 21, 19);
 
@@ -91,50 +93,13 @@ NAVEGAÇÃO
             margin-left: 0px;
 }
 
-/*
-CONSULTAS
-*/
 
-.boletim{
+.atv_cadastrada{
+    border: 1px dashed darkgray;
+    width: 65%;
+    height: 100px;
     position: absolute;
-    margin-top: -690px;
-    margin-left: 200px;
-    color: #F57904;
-    font-family: Russo one;
-    font-size: 20px;
-    
-}
-table {
-    display: table;
-    border-spacing: 0px;
-    border-color: rgb(245, 242, 242);
-    border-width: 3px;
-    margin-left: 65px;
-   
-    
-}
-table th {
-    border-color: rgb(245, 242, 242);
-    border-width: 3px;
-}
-.legenda{
-    position: absolute;
-    width: 350px;
-    margin-top: 18px;
-    margin-left: 400px;
+    margin-top: -700px;
+    margin-left: 220px;
     text-align: center;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 10px;
-    border-spacing: 0px;
-    border-color: #FDFDFD;
-}
-input{
-    background-color: rgb(22, 21, 19);
-    border-width: 3px;
-    color:#FDFDFD;
-    font-family: arial;
-}
-.select{
-    border:none;
 }

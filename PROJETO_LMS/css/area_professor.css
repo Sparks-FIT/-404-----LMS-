@@ -71,19 +71,32 @@ input[type="tel"]{
 }
 #imagem__professor{
     margin-left: 35%;
+    margin-bottom: -165px;
     width: 150px;
     height: 150px;
     border-radius: 60%;
     
     
+    
 }
+#foto_prof{
+    margin-left: 35%;
+    margin-top: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 60%;
+    position: relative;
+    background-image: url(../img/avatar.jpg) ;
+    opacity: 0.0;
+    
 
+}
 /*
 NAVEGAÇÃO
 */
 
 .menu {   
-    width: 200px; /* Set a width if you like */
+    width: 200px; 
     list-style: none;
 	padding:0px;
 	margin-top:200px;
@@ -120,7 +133,7 @@ NAVEGAÇÃO
 }
 .menu li:hover ul, .menu li.over ul{
             display:block ;
-            margin-left: 208px;
+            margin-left: 200px;
             margin-top:423px;
             width: 10px;
             padding: 0px;

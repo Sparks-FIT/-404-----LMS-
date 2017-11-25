@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
 body{
     background-color:#e5e5e5 ;    
 }
@@ -70,11 +71,46 @@ input[type="tel"]{
 }
 #imagem__Aluno{
     margin-left: 35%;
+    margin-bottom: -165px;
     width: 150px;
     height: 150px;
     border-radius: 60%;
     
     
+}
+input[type="submit"]{
+    position: absolute;
+    margin-top: 150px;
+    margin-left: -350px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;
+}
+input[type="reset"]{
+    position: absolute;
+    margin-top: 150px;
+    margin-left: -220px; 
+    color:#F57904;
+    font-family: 'Orbitron';
+    font-size:20px;
+    outline: none;
+    border-width: 1px;
+    background-color: #000000;
+}
+#foto_aluno{
+    margin-left: 35%;
+    margin-top: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 60%;
+    position: relative;
+    background-image: url(../img/avatar.jpg) ;
+    opacity: 0.0;
+    
+
 }
 
 /*
@@ -118,7 +154,7 @@ NAVEGAÇÃO
 }
 .menu li:hover ul, .menu li.over ul{
             display:block;
-            margin-left: 208px;
+            margin-left: 200px;
             margin-top:423px;
             width: 10px;
             padding:0px;
