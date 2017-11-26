@@ -196,7 +196,7 @@ input[type="time"]::-webkit-inner-spin-button {
     margin-top:20px;
     margin-left: 10pc;
 }
-#atv_2{
+#atv_2, #atv_3{
     margin-top:20px;
     color:#F57904;
     font-family: Russo one;
@@ -206,4 +206,13 @@ input[type="time"]::-webkit-inner-spin-button {
     margin-left:0px;
     border:none;
     border-bottom: 1px solid #5D5A5A ;
+}
+
+#atv_2{
+    margin-left:-50px; 
+}
+#atv_2:hover,
+#atv_3:hover{
+    background-color: #494848;
+    color: #FDFDFD;
 }
