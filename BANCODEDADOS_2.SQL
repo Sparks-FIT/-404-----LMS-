@@ -9,8 +9,8 @@ CREATE TABLE Disciplina
 	carga_horaria TINYINT
 	,teoria		  DECIMAL(3)
 	,pratica	  DECIMAL(3)
-	,ementa				 VARCHAR(5000)
-	,competencias		 VARCHAR(2000)
+	,ementa				 VARCHAR(4000)
+	,competencias		 VARCHAR(1000)
 	,habilidades		 VARCHAR(1000)
 	,conteudo			 VARCHAR(300)
 	,bibliografia_basica VARCHAR(1000)
@@ -223,28 +223,28 @@ Dependência Funcional. Noções de Álgebra e Cálculo Relacional. Formas Norma
 		,'A linguagem SQL surgiu em 1974 e foi desenvolvida nos laboratórios da IBM como interface para o Sistema Gerenciador de Banco de Dados Relacional (SGBDR) denominado SYSTEM R. Esse sistema foi criado com base em um artigo de 1970 escrito por Edgar F. Codd.'
 		,'Prático','HEUSER, C.A.; Projeto de Banco de Dados. 6a edição. Série Livros Didáticos – Instituto de Informática da UFRGS, número 4. Editora Bookman, 2009.'
 		,'KORTH, H. F.; SUDARSHAN, S; SILBERCHATZ, A. Sistema de Banco de Dados. 5a edição. Editora Campus, 2006');
-select * from disciplina
+
 
 INSERT INTO Curso(Sigla,Nome)
 VALUES ('SI','Sistema de Informação')
 	  ,('ADS' ,'Análise e Desenvolvimento de Sistemas')
 	  ,('BD' ,'Banco de Dados')
 	  ,('SGI' ,'Segurança da Informação');
-select * from curso
+
 
 INSERT INTO GradeCurricular(Sigla_curso,Semestre,Ano)
 VALUES ('SI',2,2015)
 	  ,('ADS',1,2018)
 	  ,('BD',3,2011)
 	  ,('SGI',2,2009);
-select * from GradeCurricular
+
 
 INSERT INTO Periodo(Sigla_curso,Ano_grade,Semestre_grade,numero)
 VALUES('SI',2015,2,8)
 	 ,('ADS',2018,1,7)
 	 ,('BD',2011,3,3)
 	 ,('SGI',2009,2,5);
-select * from Periodo
+
 
 INSERT INTO PeriodoDisciplina(Sigla_curso,Ano_grade,Semestre_grade,numero_periodo,Nome_disciplina)
 VALUES
@@ -267,7 +267,7 @@ VALUES
 	  ,('SGI'  ,2009,'2',5,'DevOps')
 	  ,('SGI'  ,2009,'2',5,'Linguagem da Programação II')
 	  ,('SGI'  ,2009,'2',5,'SQL');
-select * from PeriodoDisciplina
+
 
 INSERT INTO DisciplinaOfertada(nome_disciplina,ano,semestre)
 VALUES ('Engenharia De Software',2011,1)
@@ -275,7 +275,7 @@ VALUES ('Engenharia De Software',2011,1)
 		,('DevOps',2013,3)
 		,('Linguagem da Programação II',2014,4)
 		,('SQL',2015,5);
-select * from DisciplinaOfertada
+
 
 INSERT INTO Professor(nome,Email,celular,apelido) 
 VALUES('Sand Onofre','sand.onofre@gmail.com',11965545567,'S') 
@@ -285,7 +285,7 @@ VALUES('Sand Onofre','sand.onofre@gmail.com',11965545567,'S')
 	,('Leonardo Massayuki Takuno','Leonardo.Takuno@impacta.edu.br',11934974962,'L')
 	,('Edson Tiharu Tsukimoto','Edson.Tsukimoto@impacta.edu.br',11931112993,'E')
 	,('Ivair Lima','Ivair.Lima@impacta.edu.br',11924433576,'I');
-select * from Professor
+
 
 INSERT INTO Turma(ra_professor,nome_disciplina,ano_ofertado,semestre_ofertado,id,turno)
 VALUES (3,'Engenharia de Software',2011,1,1,'DIURNO')
@@ -293,7 +293,7 @@ VALUES (3,'Engenharia de Software',2011,1,1,'DIURNO')
 	  ,(4,'DevOps',2013,3,3,'DIURNO')
 	  ,(5,'Linguagem da Programação II',2014,4,4,'DIURNO')
 	  ,(1,'SQL',2015,5,5,'DIURNO');
-select * from Turma
+
 
 INSERT INTO CursoTurma(sigla_curso,nome_disciplina,ano_ofertado,semestre_ofertado,id_turma)
 VALUES ('SI','Engenharia de Software',2011,'1',1)
@@ -316,14 +316,14 @@ VALUES ('SI','Engenharia de Software',2011,'1',1)
 	  ,('SGI','DevOps',2013,'3',3)
 	  ,('SGI','Linguagem da Programação II',2014,'4',4)
 	  ,('SGI','SQL',2015,'5',5);
-select * from CursoTurma
+
 
 INSERT INTO Aluno(nome,email,celular,sigla_Curso)
 VALUES ('Diego constantino','dsconsta@gmail.com',11956890356,'ADS')
 	  ,('Henrique Estevão','henriqueestevao@outlook.com ',11912328756,'ADS')
 	  ,('Leonardo Negreiros','leonardo.negreiros@gmail.com ',11937659735,'SI')
 	  ,('Matheus Scotini Rozario ','Matheusscotini@outlook.com  ',11922446587,'ADS')
-select * from Aluno
+
 
 INSERT INTO Matricula(ra_aluno,nome_disciplina,ano_ofertado,semestre_ofertado,id_turma)
 VALUES (1,'Engenharia de Software',2011,1,1)
@@ -346,7 +346,7 @@ VALUES (1,'Engenharia de Software',2011,1,1)
 	,(2,'SQL',2015,5,5)
 	,(3,'SQL',2015,5,5)
 	,(4,'SQL',2015,5,5);
-select * from Matricula
+
 
 INSERT INTO Questao(nome_disciplina,ano_ofertado,semestre_ofertado,id_turma,numero,data_limite_entrega,descricao,data1)
 VALUES ('Engenharia de Software',2011,1,1,2,'2016-11-28','Projeto de Banco de Dados - Professor: Sand','2016-12-11')
@@ -354,7 +354,7 @@ VALUES ('Engenharia de Software',2011,1,1,2,'2016-11-28','Projeto de Banco de Da
 	   ,('DevOps',2013,3,3,4,'2014-9-12','Trabalhando Com Area Restrita - Professor: Vanderon','2014-12-10')
 	   ,('Linguagem da Programação II',2014,4,4,5,'2017-10-22','Projeto Activia - Professor: Vanderson','2017-11-2')
 	   ,('SQL',2015,5,5,6,'2016-10-22','Projeto Activia - Professor: Vanderson','2016-11-2');
-select * from Questao
+
 
 INSERT INTO ArquivosQuestao(arquivo,numero_questao,id_turma,nome_disciplina,ano_ofertado,semestre_ofertado)
 VALUES ('Arquivo encontra-se no Maverick ou na SmartClass',2,1,'Engenharia de Software',2011,1)
@@ -362,7 +362,7 @@ VALUES ('Arquivo encontra-se no Maverick ou na SmartClass',2,1,'Engenharia de So
 	  ,('Arquivo encontra-se no Maverick ou na SmartClass',4,3,'DevOps',2013,3)
 	  ,('Arquivo encontra-se no Maverick ou na SmartClass',5,4,'Linguagem da Programação II',2014,4)
 	  ,('Arquivo encontra-se no Maverick ou na SmartClass',6,5,'SQL',2015,5);
-select * from ArquivosQuestao
+
 
 INSERT INTO Resposta(ra_aluno,numero_questao,id_turma,nome_disciplina,ano_ofertado,semestre_ofertado,data_avaliacao,nota,avaliacao,descricao,data_de_envio)
 VALUES (1,2,1,'Engenharia de Software',2011,1,'2017-11-29',9.5,'Bom Aluno','Prova prática de BD utilizando o SSMS','2017-12-02')
@@ -370,7 +370,7 @@ VALUES (1,2,1,'Engenharia de Software',2011,1,'2017-11-29',9.5,'Bom Aluno','Prov
 	,(3,4,3,'DevOps',2013,3,'2017-11-29',8.5,'Rasoável Aluno','Prova prática de ADS utilizando o Linux com C++','2017-12-02')
 	,(4,5,4,'Linguagem da Programação II',2014,4,'2017-11-29',7.5,'Bom Aluno','Prova prática de Hardware utilizando Ferramentas','2017-12-02')
 	,(5,6,5,'SQl',2015,5,'2017-11-29',7.5,'Bom Aluno','Prova prática de Hardware utilizando Ferramentas','2017-12-02');
-select * from Resposta
+
 
 INSERT INTO ArquivosResposta(arquivo,ra_aluno,numero_questao,id_turma,nome_disciplina,ano_ofertado,semestre_ofertado)
 VALUES ('Arquivo Avaliado',1,2,1,'Engenharia de Software',2011,1)
@@ -378,10 +378,25 @@ VALUES ('Arquivo Avaliado',1,2,1,'Engenharia de Software',2011,1)
 	,('Arquivo Avaliado',3,4,3,'DevOps',2013,3)
 	,('Arquivo Avaliado',4,5,4,'Linguagem da Programação II',2014,4)
 	,('Arquivo Avaliado',5,6,5,'SQL',2015,5);
-select * from ArquivosResposta
+
 
 
 	-- SELECTS --
+select * from disciplina
+select * from curso
+select * from GradeCurricular
+select * from Periodo
+select * from PeriodoDisciplina
+select * from DisciplinaOfertada
+select * from Professor
+select * from Turma
+select * from CursoTurma
+select * from Aluno
+select * from Matricula
+select * from Questao
+select * from ArquivosQuestao
+select * from Resposta
+select * from ArquivosResposta
 
 
 SELECT 	D.nome AS 'Disciplina'
