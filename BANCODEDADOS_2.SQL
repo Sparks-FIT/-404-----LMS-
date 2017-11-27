@@ -37,7 +37,6 @@ create table Professor (
     constraint uq_professor unique (apelido,ra)
 );
 go
-
 create table Aluno (
   	id int IDENTITY(1,1) not null,
 	 ra int not null,
